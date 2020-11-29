@@ -6,9 +6,9 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-
 chmod +x tcp.sh
 
 # download
-wget https://github.com/shadowsocks/shadowsocks-libev/releases/download/v3.3.4/shadowsocks-libev-3.3.4.tar.gz
-tar xvf shadowsocks-libev-3.3.4.tar.gz
-cd shadowsocks-libev-3.3.4
+wget https://github.com/shadowsocks/shadowsocks-libev/releases/download/v3.3.5/shadowsocks-libev-3.3.5.tar.gz
+tar xvf shadowsocks-libev-3.3.5.tar.gz
+cd shadowsocks-libev-3.3.5
 
 # Installation of libsodium
 export LIBSODIUM_VER=1.0.18
@@ -31,5 +31,5 @@ popd
 sudo ldconfig
 
 # Start building
-./autogen.sh && ./configure && make
+autoreconf --install --force && ./configure && make
 sudo make install
