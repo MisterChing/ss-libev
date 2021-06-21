@@ -1,9 +1,12 @@
 #!/bin/bash
-HOME=$(readlink -f $(dirname $0))
-WORK_DIR=`dirname $0`
+if [ "x$(uname)" == "xDarwin" ]; then
+    ROOT_DIR=$(greadlink -f $(dirname $0))
+else
+    ROOT_DIR=$(readlink -f $(dirname $0))
+fi
 sleep 1
 if [ "$1"x == "server"x ]; then
-    ${HOME}/ss-server -c ${HOME}/../conf/config.json -f ${HOME}/../var/ss-server.pid
+    ${ROOT_DIR}/ss-server -c ${ROOT_DIR}/../conf/config.json -f ${ROOT_DIR}/../var/ss-server.pid
 elif [ "$1"x == "client"x ]; then
-    ${HOME}/ss-local -c ${HOME}/../conf/config.json -f ${HOME}/../var/ss-local.pid
+    ${ROOT_DIR}/ss-local -c ${ROOT_DIR}/../conf/config.json -f ${ROOT_DIR}/../var/ss-local.pid
 fi
