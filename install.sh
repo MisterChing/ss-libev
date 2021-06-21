@@ -5,6 +5,12 @@ yum install gcc gettext autoconf libtool automake make pcre-devel asciidoc xmlto
 wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh"
 chmod +x tcp.sh
 
+# install goproxy
+export GOPROXY_VER=10.7
+wget https://github.com/snail007/goproxy/releases/download/v$GOPROXY_VER/proxy-linux-amd64.tar.gz
+mkdir -p goproxy
+tar -zxvf proxy-linux-amd64.tar.gz -C goproxy
+
 # download
 wget https://github.com/shadowsocks/shadowsocks-libev/releases/download/v3.3.5/shadowsocks-libev-3.3.5.tar.gz
 tar xvf shadowsocks-libev-3.3.5.tar.gz
