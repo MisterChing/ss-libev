@@ -6,6 +6,8 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-
 chmod +x tcp.sh
 wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
 chmod +x speedtest-cli
+wget "https://raw.githubusercontent.com/zhucaidan/mtr_trace/main/mtr_trace.sh"
+chmod +x mtr_trace.sh
 
 # install goproxy
 export GOPROXY_VER=10.7
